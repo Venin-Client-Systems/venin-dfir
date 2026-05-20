@@ -1,0 +1,33 @@
+name: Bug Report
+description: Report incorrect behavior, crashes, or parser regressions.
+title: "[Backend] "
+labels: ["backend"]
+body:
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: What failed and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: artefact
+    attributes:
+      label: Artefact Context
+      description: Artefact type, source application/version, platform, and whether the sample is shareable.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Commands, inputs, and outputs needed to reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_safety
+    attributes:
+      label: Evidence Safety
+      description: Do not paste personal, customer, or sensitive evidence content.
+    validations:
+      required: true

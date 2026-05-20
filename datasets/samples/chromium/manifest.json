@@ -1,0 +1,12 @@
+{
+  "dataset_id": "synthetic_chromium_history_v1",
+  "description": "Synthetic Chromium-family History SQLite database for VENIN DFIR examples.",
+  "files": [
+    {
+      "path": "History",
+      "sha256": "f504bfc74676db86eb5d7a6e246e95a1ae663c50f8c43f5b0ff56f9ea8890ade",
+      "generated_from": "History.sql"
+    }
+  ],
+  "contains_real_user_data": false
+}

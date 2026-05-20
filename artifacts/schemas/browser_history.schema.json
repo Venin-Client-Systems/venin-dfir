@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://venin-dfir.example/schemas/browser_history.schema.json",
+  "title": "VENIN Browser History Record",
+  "type": "object",
+  "required": [
+    "parser_id",
+    "source_path",
+    "source_row_id",
+    "url",
+    "title",
+    "visit_count",
+    "typed_count",
+    "hidden",
+    "last_visit_time_raw"
+  ],
+  "properties": {
+    "parser_id": { "type": "string" },
+    "source_path": { "type": "string" },
+    "evidence_id": { "type": ["string", "null"] },
+    "source_row_id": { "type": "integer" },
+    "url": { "type": "string" },
+    "title": { "type": "string" },
+    "visit_count": { "type": "integer" },
+    "typed_count": { "type": "integer" },
+    "hidden": { "type": "boolean" },
+    "last_visit_time_raw": { "type": "integer" },
+    "last_visit_time_utc": { "type": ["string", "null"], "format": "date-time" }
+  }
+}

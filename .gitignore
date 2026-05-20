@@ -1,0 +1,16 @@
+/target/
+/output/*
+!/output/.gitkeep
+.DS_Store
+*.swp
+*.tmp
+*.log
+*.sqlite-wal
+*.sqlite-shm
+*.db-wal
+*.db-shm
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]

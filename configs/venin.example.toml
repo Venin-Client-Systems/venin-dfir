@@ -1,0 +1,13 @@
+[output]
+default_dir = "output"
+formats = ["json", "csv"]
+
+[logging]
+level = "warn"
+json = false
+
+[timeline]
+timezone = "UTC"
+
+[cases]
+root = "cases"

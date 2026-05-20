@@ -1,0 +1,33 @@
+name: Parser Request
+description: Request support for a forensic artefact parser.
+title: "[Backend] Add parser for "
+labels: ["backend"]
+body:
+  - type: textarea
+    id: artefact
+    attributes:
+      label: Artefact
+      description: Name the artefact and source platform/application.
+    validations:
+      required: true
+  - type: textarea
+    id: forensic_value
+    attributes:
+      label: Forensic Value
+      description: What investigative questions does this artefact answer?
+    validations:
+      required: true
+  - type: textarea
+    id: schema
+    attributes:
+      label: Known Schema Or Format Notes
+      description: Tables, fields, binary structures, timestamp formats, and references.
+    validations:
+      required: false
+  - type: textarea
+    id: fixtures
+    attributes:
+      label: Fixtures
+      description: Describe synthetic or redistributable fixtures that can be used for validation.
+    validations:
+      required: false

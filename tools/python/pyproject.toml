@@ -1,0 +1,11 @@
+[project]
+name = "venin-lab"
+version = "0.1.0"
+description = "Python analyst helpers for VENIN DFIR exports."
+requires-python = ">=3.11"
+readme = "README.md"
+license = { text = "MIT OR Apache-2.0" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,29 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Claude Code Review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          additional_permissions: |
+            actions: read
+          plugin_marketplaces: "https://github.com/anthropics/claude-code.git"
+          plugins: "code-review@claude-code-plugins"
+          prompt: "/code-review:code-review ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
+          claude_args: |
+            --max-turns 8
+            --allowedTools Read,Glob,Grep,Bash(git status:*),Bash(git diff:*),Bash(cargo fmt:*),Bash(cargo build:*),Bash(cargo test:*),Bash(cargo clippy:*),Bash(cargo metadata:*),Bash(scripts/check.sh:*),Bash(sqlite3:*)
+            --system-prompt "Review as a senior DFIR tooling engineer. Prioritize parser correctness, timestamp handling, evidence integrity, deterministic output, unsafe input handling, missing tests, and CLI regressions."

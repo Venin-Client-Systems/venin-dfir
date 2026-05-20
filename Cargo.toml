@@ -1,0 +1,49 @@
+[workspace]
+members = [
+    "cmd/venin-cli",
+    "core/venin-core",
+    "parsers/venin-parsers",
+    "timeline/venin-timeline",
+    "shared/venin-shared",
+    "acquisition/venin-acquisition",
+    "mobile/venin-mobile",
+    "windows/venin-windows",
+    "ios/venin-ios",
+    "android/venin-android",
+]
+resolver = "2"
+
+[workspace.package]
+authors = ["VENIN DFIR Contributors"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/venin-dfir/venin-dfir"
+rust-version = "1.82"
+version = "0.1.0"
+
+[workspace.dependencies]
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4.5", features = ["derive", "env"] }
+csv = "1.3"
+hex = "0.4"
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+tempfile = "3.13"
+thiserror = "2.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"] }
+uuid = { version = "1.11", features = ["serde", "v4"] }
+walkdir = "2.5"
+
+venin-acquisition = { path = "acquisition/venin-acquisition" }
+venin-android = { path = "android/venin-android" }
+venin-core = { path = "core/venin-core" }
+venin-ios = { path = "ios/venin-ios" }
+venin-mobile = { path = "mobile/venin-mobile" }
+venin-parsers = { path = "parsers/venin-parsers" }
+venin-shared = { path = "shared/venin-shared" }
+venin-timeline = { path = "timeline/venin-timeline" }
+venin-windows = { path = "windows/venin-windows" }

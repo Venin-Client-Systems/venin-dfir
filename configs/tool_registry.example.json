@@ -1,0 +1,22 @@
+[
+  {
+    "id": "browser_history.chromium",
+    "display_name": "Chromium Browser History Parser",
+    "version": "0.1.0",
+    "kind": "parser",
+    "status": "experimental",
+    "supported_artifacts": [
+      "Chrome History SQLite database",
+      "Chromium History SQLite database",
+      "Microsoft Edge History SQLite database",
+      "Brave History SQLite database"
+    ],
+    "input_types": ["sqlite_database", "file"],
+    "output_formats": ["json", "csv", "timeline_json", "timeline_csv"],
+    "output_schemas": ["browser_history_record"],
+    "evidence_notes": [
+      "Open the database read-only.",
+      "Preserve raw timestamps beside normalized UTC values."
+    ]
+  }
+]
