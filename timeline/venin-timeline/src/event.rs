@@ -38,8 +38,7 @@ impl TimelineBuilder {
     }
 
     pub fn build(mut self) -> Vec<TimelineEvent> {
-        self.events
-            .sort_by(|left, right| left.timestamp_utc.cmp(&right.timestamp_utc));
+        self.events.sort_by_key(|event| event.timestamp_utc);
         self.events
     }
 }
